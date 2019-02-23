@@ -1,3 +1,10 @@
+'''
+Filename: logistic_regression.py
+Path: logistic_regression_digits
+Created Date: Saturday, February 23rd 2019, 10:19:51 am
+Author: kelson martins
+'''
+
 
 from sklearn import datasets
 import numpy as np
@@ -7,7 +14,7 @@ import math
 
 # Sigmoid function
 def logistic(x):
-
+	
 	x = 1 / (1 + np.exp(-x))
 
 	return x
@@ -45,11 +52,10 @@ def gradient_descent_log(bias, coefficients, alpha, X, Y, max_iter):
             gradCoef = (1.0/length)* (np.sum( (predictedY - Y)*X[:, coefNum]))
             
             # update coefficient using GD update rule
-            coefficients[coefNum] = coefficients[coefNum] - (alpha*gradCoef)
-        
-        #TODO: 3)
+            coefficients[coefNum] = coefficients[coefNum] - ( alpha * gradCoef ) 
+
         # Cross Entropy Error 
-        cost = -1/length * np.sum(Y*np.log(predictedY) + (1-Y)*np.log(1-predictedY))
+        cost = 1/length * np.sum( -(Y*np.log(predictedY)) - (1-Y) * np.log(1-predictedY))
 
         errorValues.append(cost)
 
@@ -62,7 +68,19 @@ def gradient_descent_log(bias, coefficients, alpha, X, Y, max_iter):
 
 def calculateAccuracy(bias, coefficients, X_test, y_test):
 
-    print ("Final Accuracy on Test Set: ??")
+	length = X_test.shape[0]
+	yPred = hypothesisLogistic(X_test,coefficients,bias)
+
+	yPred[yPred >= 0.5] = 1
+	yPred[yPred < 0.5] = 0
+
+	comparison = yPred == y_test
+	correct_predicted = np.sum(comparison)
+
+	accuracy = correct_predicted / length
+
+
+	print ("Final Accuracy on Test Set: {}".format(accuracy))
     
 
 def logisticRegression(X_train, y_train, X_test, y_test):
