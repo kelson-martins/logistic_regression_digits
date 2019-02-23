@@ -5,37 +5,13 @@ This python program implements a logistic regression algorithm that identifies d
 #### Activation Function
 Activation function used is the Sigmoid.
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <msub>
-    <mi>h</mi>
-    <mi>&#x03B8;<!-- θ --></mi>
-  </msub>
-  <mo stretchy="false">(</mo>
-  <mi>x</mi>
-  <mo stretchy="false">)</mo>
-  <mo>=</mo>
-  <mfrac>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mn>1</mn>
-    </mrow>
-    <mrow>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mn>1</mn>
-      </mrow>
-      <mo>+</mo>
-      <msup>
-        <mi>e</mi>
-        <mo>&#x2212;<!-- − --></mo>
-      </msup>
-      <msup>
-        <mi>&#x03B8;<!-- θ --></mi>
-        <mi>T</mi>
-      </msup>
-      <mi>x</mi>
-    </mrow>
-  </mfrac>
-</math>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;h(X)&space;=&space;\frac{\mathrm{1}&space;}{\mathrm{1}&space;&plus;&space;e^-&space;X\alpha^T&plus;b&space;}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;h(X)&space;=&space;\frac{\mathrm{1}&space;}{\mathrm{1}&space;&plus;&space;e^-&space;X\alpha^T&plus;b&space;}" title="h(X) = \frac{\mathrm{1} }{\mathrm{1} + e^- X\alpha^T+b }" /></a>
 
 ### Loss Function
 Cross Entropy Loss Function is being used.
+
+### Trainning and Test Data
+By default:
+70% of the dataset is being used for training
+30% of the dataset is being used for testing
 
