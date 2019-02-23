@@ -12,6 +12,8 @@ Cross Entropy Loss Function is being used.
 
 ### Trainning and Test Data
 By default:
+
 70% of the dataset is being used for training
+
 30% of the dataset is being used for testing
 
